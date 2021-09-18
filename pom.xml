@@ -8,13 +8,7 @@
     <packaging>pom</packaging>
     <version>master</version>
     <modules>
-        <module>hbase</module>
-        <module>hive</module>
-        <module>orc</module>
-        <module>hbasediscovery</module>
-        <module>common</module>
-        <module>greeplum</module>
-        <module>class-demo</module>
+
     </modules>
 
 
