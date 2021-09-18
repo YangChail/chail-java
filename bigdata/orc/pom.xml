@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>bigdata</artifactId>
+        <groupId>org.chail</groupId>
+        <version>master</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>orc</artifactId>
+
+    <properties>
+        <hadoop.hdfs.version>2.6.0-cdh5.16.1</hadoop.hdfs.version>
+        <org.apache.orc.version>1.2.3</org.apache.orc.version>
+        <cdh.version>cdh5.16.2</cdh.version>
+        <dependency.pentaho-kettle.version>8.3.0.0-371</dependency.pentaho-kettle.version>
+    </properties>
+
+
+    <dependencies>
+        <!-- kettle -->
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-core</artifactId>
+            <version>${dependency.pentaho-kettle.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-engine</artifactId>
+            <version>${dependency.pentaho-kettle.version}</version>
+        </dependency>
+
+        <!-- ORC -->
+        <dependency>
+            <groupId>org.apache.orc</groupId>
+            <artifactId>orc-core</artifactId>
+            <version>${org.apache.orc.version}</version>
+        </dependency>
+    </dependencies>
+</project>
