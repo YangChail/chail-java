@@ -4,11 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.chail</groupId>
-    <artifactId>bigdata</artifactId>
+    <artifactId>chail-java</artifactId>
     <packaging>pom</packaging>
     <version>master</version>
     <modules>
 
+        <module>bigdata/kafka-kb</module>
     </modules>
 
 
@@ -80,6 +81,17 @@
 
 
     <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

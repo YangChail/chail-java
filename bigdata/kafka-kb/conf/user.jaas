@@ -1,0 +1,27 @@
+StormClient {
+com.sun.security.auth.module.Krb5LoginModule required
+useKeyTab=true
+keyTab="D:\\code\\github\\chail-java\\bigdata\\kafka-kb\\conf\\user.keytab"
+principal="chail"
+useTicketCache=false
+storeKey=true
+debug=true;
+};
+KafkaClient {
+com.sun.security.auth.module.Krb5LoginModule required
+useKeyTab=true
+keyTab="D:\\code\\github\\chail-java\\bigdata\\kafka-kb\\conf\\user.keytab"
+principal="chail"
+useTicketCache=false
+storeKey=true
+debug=true;
+};
+Client {
+com.sun.security.auth.module.Krb5LoginModule required
+useKeyTab=true
+keyTab="D:\\code\\github\\chail-java\\bigdata\\kafka-kb\\conf\\user.keytab"
+principal="chail"
+useTicketCache=false
+storeKey=true
+debug=true;
+};
