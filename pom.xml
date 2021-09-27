@@ -10,6 +10,8 @@
     <modules>
 
         <module>bigdata/kafka-kb</module>
+        <module>java/classloder</module>
+        <module>bigdata/hdfs-kerberos</module>
     </modules>
 
 

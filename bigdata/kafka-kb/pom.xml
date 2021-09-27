@@ -17,6 +17,14 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.kafka</groupId>-->
+<!--            <artifactId>kafka-clients</artifactId>-->
+<!--            <version>2.6.0</version>-->
+<!--        </dependency>-->
+    </dependencies>
+
 
     <build>
         <testResources>

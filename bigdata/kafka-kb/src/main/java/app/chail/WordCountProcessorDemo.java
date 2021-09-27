@@ -152,7 +152,7 @@ public class WordCountProcessorDemo {
      */
     private static void securityPrepare() throws IOException {
         String filePath = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator;
-        String krbFile = filePath + "conf/krb5.conf";
+        String krbFile = filePath + "conf/krb51.conf";
         String userKeyTableFile = filePath + USER_KEYTAB_FILE;
 
         // Windows路径下分隔符替换

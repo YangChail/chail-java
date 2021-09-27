@@ -13,14 +13,15 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
 
-public class KakfaTests {
-    public static final String JAVA_SECURITY_KRB5_CONF = "java.security.krb51.conf";
+public class KakfaTests1 {
+    public static final String JAVA_SECURITY_KRB5_CONF = "java.security.krb5.conf";
     private static final String RESOURCES_FILEPATH = System.getProperty("user.dir") + File.separator + "conf" ;
     public static final String JAVA_SECURITY_LOGIN_CONF = "java.security.auth.login.config";
     private static Properties CONFIG = new Properties();
-    private static final Logger LOG = LoggerFactory.getLogger(KakfaTests.class);
+    private static final Logger LOG = LoggerFactory.getLogger(KakfaTests1.class);
 
     public static void main(String[] args) throws IOException {
+
         LOG.info("sss");
         readConf();
         securityPrepare();
@@ -29,7 +30,7 @@ public class KakfaTests {
 
 
     private static void readConf() throws IOException {
-        CONFIG.load(new FileInputStream(RESOURCES_FILEPATH +  File.separator+"config.properties"));
+        CONFIG.load(new FileInputStream(RESOURCES_FILEPATH +  File.separator+"config1.properties"));
     }
 
     private static void listTopic(Properties clientProps) {
@@ -48,7 +49,7 @@ public class KakfaTests {
         //System.setProperty("sun.security.krb5.debug","true");
         System.setProperty("zookeeper.server.principal", CONFIG.getProperty("zookeeper.server.principal"));
         System.setProperty(JAVA_SECURITY_KRB5_CONF, RESOURCES_FILEPATH + File.separator+ "krb51.conf");
-        System.setProperty(JAVA_SECURITY_LOGIN_CONF, RESOURCES_FILEPATH +  File.separator+"user.jaas");
+        System.setProperty(JAVA_SECURITY_LOGIN_CONF, RESOURCES_FILEPATH +  File.separator+"user1.jaas");
     }
 
 

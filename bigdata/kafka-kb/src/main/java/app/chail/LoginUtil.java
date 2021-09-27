@@ -52,7 +52,7 @@ public class LoginUtil {
     /**
      * java security krb5 file path
      */
-    public static final String JAVA_SECURITY_KRB5_CONF = "java.security.krb5.conf";
+    public static final String JAVA_SECURITY_KRB5_CONF = "java.security.krb51.conf";
 
     /**
      * java security login file path
