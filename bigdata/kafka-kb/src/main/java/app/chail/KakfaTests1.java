@@ -64,9 +64,6 @@ public class KakfaTests1 {
         clientProps.put("bootstrap.servers", CONFIG.getProperty("bootstrap.servers"));
         clientProps.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         clientProps.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-
-
-
         return clientProps;
     }
 
