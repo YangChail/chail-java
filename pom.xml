@@ -72,11 +72,11 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.github.dadiyang</groupId>
-            <artifactId>autologging-aop</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.dadiyang</groupId>-->
+<!--            <artifactId>autologging-aop</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>jdk.tools</groupId>-->
 <!--            <artifactId>jdk.tools</artifactId>-->
