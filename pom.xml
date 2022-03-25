@@ -9,10 +9,35 @@
     <version>master</version>
     <modules>
 
+<!--        <module>bigdata/kafka-kb</module>-->
+<!--        <module>java/classloder</module>-->
+<!--        <module>bigdata/hdfs-kerberos</module>-->
+<!--        <module>java/yaml</module>-->
+<!--        <module>gzip</module>-->
+<!--        <module>zip/gzip</module>-->
+        <module>demo</module>
+        <module>db/jdbc</module>
+<!--        <module>bigdata/zk</module>-->
         <module>bigdata/kafka-kb</module>
-        <module>java/classloder</module>
-        <module>bigdata/hdfs-kerberos</module>
+
     </modules>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <spring.version>5.3.6</spring.version>
+        <spring-boot.version>2.4.5</spring-boot.version>
+
+        <mybatis-spring-boot-starter.version>2.1.4</mybatis-spring-boot-starter.version>
+        <mysql-connector-java.version>8.0.24</mysql-connector-java.version>
+
+        <maven-war-plugin.version>3.3.1</maven-war-plugin.version>
+    </properties>
 
 
     <distributionManagement>

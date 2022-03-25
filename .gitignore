@@ -1,4 +1,4 @@
-/hive/target/*
+*/target/*
 /.idea/*
 ### Java template
 # Compiled class file
@@ -19,6 +19,10 @@
 *.nar
 *.ear
 *.zip
+*.tgz
+*.tar
+*.license
+*/
 *.tar.gz
 *.rar
 
@@ -28,3 +32,4 @@ hs_err_pid*
 
 *.lst
 pom.properties
+/zip/gzip/target/2021_1127_16_55_02_out/dsengine01.tgz
