@@ -15,8 +15,6 @@
     <version>master</version>
 
     <modules>
-
-
         <module>xxl-job</module>
     </modules>
 

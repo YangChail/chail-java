@@ -7,15 +7,23 @@
     <artifactId>chail-java</artifactId>
     <packaging>pom</packaging>
     <version>master</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <modules>
 
 <!--        <module>bigdata/kafka-kb</module>-->
 <!--        <module>java/classloder</module>-->
 <!--        <module>bigdata/hdfs-kerberos</module>-->
 <!--        <module>java/yaml</module>-->
-<!--        <module>gzip</module>-->
+        <module>zip/gzip</module>
 <!--        <module>zip/gzip</module>-->
-        <module>demo</module>
+        <module>demo/xxl-job</module>
         <module>db/jdbc</module>
 <!--        <module>bigdata/zk</module>-->
         <module>bigdata/kafka-kb</module>
@@ -94,7 +102,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.9</version>
-            <scope>test</scope>
         </dependency>
 
 <!--        <dependency>-->

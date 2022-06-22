@@ -260,7 +260,8 @@ public class GZIPUtil {
         String manager02Path = tagepath + File.separator + "dsmanager02.tar";
         String engine01Path = tagepath + File.separator + "dsengine01.tar";
         String engine02Path = tagepath + File.separator + "dsengine02.tar";
-
+        String engine03Path = tagepath + File.separator + "dsengine03.tar";
+        String engine04Path = tagepath + File.separator + "dsengine04.tar";
 
 
         String dsinc = tagepath + File.separator + "dsinc.tar";
@@ -287,6 +288,8 @@ public class GZIPUtil {
                 makeImage(dscommonPath,manager02Path);
                 makeImage(dscommonPath,engine01Path);
                 makeImage(dscommonPath,engine02Path);
+                makeImage(dscommonPath,engine03Path);
+                makeImage(dscommonPath,engine04Path);
             }else if(zipfile.getName().equals("dsinc.zip")){
                 System.out.println("dsinc.zip正在解压...");
                 unzip(tagepath,zipfile.getPath());
