@@ -48,18 +48,6 @@
     </properties>
 
 
-    <distributionManagement>
-        <repository>
-            <id>nexus-releases</id>
-            <name>corp nexus-releases</name>
-            <url>http://nexus.mchz.com.cn:8081/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshot</id>
-            <name>corp nexus-snapshot</name>
-            <url>http://nexus.mchz.com.cn:8081/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
     <repositories>
         <repository>
             <id>nexus</id>
