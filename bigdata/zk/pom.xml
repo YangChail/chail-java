@@ -6,7 +6,6 @@
         <artifactId>chail-java</artifactId>
         <groupId>org.chail</groupId>
         <version>master</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,7 +15,7 @@
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka_2.11</artifactId>
-            <version>0.11.0-kafka-3.0.0</version>
+<!--            <version>0.11.0-kafka-3.0.0</version>-->
         </dependency>
     </dependencies>
 

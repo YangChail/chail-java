@@ -8,76 +8,37 @@
     <packaging>pom</packaging>
     <version>master</version>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
     <modules>
-
-<!--        <module>bigdata/kafka-kb</module>-->
-<!--        <module>java/classloder</module>-->
-<!--        <module>bigdata/hdfs-kerberos</module>-->
-<!--        <module>java/yaml</module>-->
-        <module>zip/gzip</module>
-<!--        <module>zip/gzip</module>-->
+        <module>bigdata/kafka-kb</module>
+        <module>java/classloder</module>
+        <module>bigdata/hdfs-kerberos</module>
+        <module>java/yaml</module>
+        <module>tools/zip/gzip</module>
         <module>demo/xxl-job</module>
         <module>db/jdbc</module>
-<!--        <module>bigdata/zk</module>-->
+        <module>bigdata/zk</module>
         <module>bigdata/kafka-kb</module>
-
     </modules>
 
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-
-        <spring.version>5.3.6</spring.version>
-        <spring-boot.version>2.4.5</spring-boot.version>
-
-        <mybatis-spring-boot-starter.version>2.1.4</mybatis-spring-boot-starter.version>
-        <mysql-connector-java.version>8.0.24</mysql-connector-java.version>
-
-        <maven-war-plugin.version>3.3.1</maven-war-plugin.version>
     </properties>
-
 
     <repositories>
         <repository>
-            <id>nexus</id>
-            <name>Team Nexus Repository</name>
-            <url>http://nexus.mchz.com.cn:8081/nexus/content/groups/public</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-            </snapshots>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
             <releases>
                 <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
             </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>nexus</id>
-            <name>Team Nexus Repository</name>
-            <url>http://nexus.mchz.com.cn:8081/nexus/content/groups/public</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
+
     <dependencyManagement>
         <dependencies>
         </dependencies>
@@ -86,50 +47,12 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.9</version>
-        </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.github.dadiyang</groupId>-->
-<!--            <artifactId>autologging-aop</artifactId>-->
-<!--            <version>1.0.0</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>jdk.tools</groupId>-->
-<!--            <artifactId>jdk.tools</artifactId>-->
-<!--            <version>1.8</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>-->
-<!--        </dependency>-->
     </dependencies>
 
 
 
     <build>
-        <testResources>
-            <testResource>
-                <directory>src/test/java</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </testResource>
-        </testResources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 
 
