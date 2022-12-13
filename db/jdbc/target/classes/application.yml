@@ -1,6 +1,0 @@
-server:
-  port: 58888
-spring:
-  ##访问html配置
-  thymeleaf:
-    classpath: /templates/
