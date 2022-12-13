@@ -122,11 +122,11 @@
             <version>0.1.54</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.mchz</groupId>
-            <artifactId>datasource-common</artifactId>
-            <version>1.5.1.26-release</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.mchz</groupId>-->
+<!--            <artifactId>datasource-common</artifactId>-->
+<!--            <version>1.5.1.26-release</version>-->
+<!--        </dependency>-->
 
 
         <dependency>

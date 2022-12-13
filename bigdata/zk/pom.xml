@@ -12,11 +12,11 @@
     <artifactId>zk</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka_2.11</artifactId>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.kafka</groupId>-->
+<!--            <artifactId>kafka_2.11</artifactId>-->
 <!--            <version>0.11.0-kafka-3.0.0</version>-->
-        </dependency>
+<!--        </dependency>-->
     </dependencies>
 
 

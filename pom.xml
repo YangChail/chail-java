@@ -12,7 +12,7 @@
         <module>bigdata/kafka-kb</module>
         <module>bigdata/hdfs-kerberos</module>
         <module>bigdata/minio</module>
-<!--        <module>bigdata/spark</module>-->
+        <module>bigdata/spark</module>
         <module>bigdata/zk</module>
         <module>bigdata/kafka-kb</module>
 
