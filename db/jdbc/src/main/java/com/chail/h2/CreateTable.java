@@ -1,11 +1,12 @@
 package com.chail.h2;
 
+import com.chail.oracle.JDBCUtil;
+
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.chail.apputil.jdbc.jdbcutilsone.JDBCUtil;
 
 public class CreateTable {
 
