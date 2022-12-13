@@ -9,6 +9,7 @@ public class CheckTableExsitCmp extends NodeCondComponent {
     @Override
     public String processCond() throws Exception {
         DataSlot slot = this.getSlot();
-        return slot.isTableExist()?"truncateTable":"createTable";
+        //return slot.isTableExist()?"truncateTable":
+        return     "createTable";
     }
 }

@@ -44,7 +44,7 @@ public class KakfaTests1 {
 
 
     private static void registry() {
-        DefaultDiscoveryClient defaultDiscoveryClient = new DefaultDiscoveryClient("127.0.0.1:2181", "test-aa", "192.169.123.1:8081", ServingModeEnum.CLUSTER);
+        DefaultDiscoveryClient defaultDiscoveryClient = new DefaultDiscoveryClient("127.0.0.1:2181","127.0.0.1:2181", "test-aa", "192.169.123.1:8081", ServingModeEnum.CLUSTER);
         defaultDiscoveryClient.startup();
         CuratorFramework framework = defaultDiscoveryClient.getFramework();
         CuratorZookeeperClient zookeeperClient = framework.getZookeeperClient();

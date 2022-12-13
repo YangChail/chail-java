@@ -2,9 +2,6 @@ package app.chail;
 
 import com.mchz.discovery.client.DefaultDiscoveryClient;
 import com.mchz.discovery.client.constant.ServingModeEnum;
-import org.apache.curator.CuratorZookeeperClient;
-import org.apache.curator.RetryLoop;
-import org.apache.curator.framework.CuratorFramework;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.PartitionInfo;
 import org.slf4j.Logger;
@@ -22,7 +19,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
-import java.util.concurrent.Callable;
 
 public class KakfaTests12 {
     public static final String JAVA_SECURITY_KRB5_CONF = "java.security.krb5.conf";
@@ -40,7 +36,7 @@ public class KakfaTests12 {
 
 
     private static void registry() {
-        DefaultDiscoveryClient defaultDiscoveryClient = new DefaultDiscoveryClient("127.0.0.1:2181", "test-aa", "192.169.123.1:8081", ServingModeEnum.CLUSTER);
+        DefaultDiscoveryClient defaultDiscoveryClient = new DefaultDiscoveryClient("127.0.0.1:2181","127.0.0.1:2181", "test-aa", "192.169.123.1:8081", ServingModeEnum.CLUSTER);
         defaultDiscoveryClient.startup();
         new Thread(new Runnable() {
             @Override
