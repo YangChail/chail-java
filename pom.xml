@@ -24,6 +24,8 @@
 
         <module>leecode/code-demo</module>
 
+        <module>project/wz</module>
+
     </modules>
 
     <parent>
