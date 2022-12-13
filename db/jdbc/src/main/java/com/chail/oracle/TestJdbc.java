@@ -1,8 +1,8 @@
-package com.chail.apputil.jdbc.jdbcutilsone;
+package com.chail.oracle;
 
 public class TestJdbc {
 
-	@org.junit.Test
+
 	public void testOracle9i() throws Exception {
 		String user = "chail";
 		String pass = "chail";

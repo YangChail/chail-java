@@ -1,16 +1,11 @@
-package com.chail.apputil.jdbc.jdbcutilsone;
+package com.chail.oracle;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
+import java.lang.reflect.Field;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.lang.reflect.Field;
 
 /**
  * 数据库连接工具类

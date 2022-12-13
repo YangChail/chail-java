@@ -1,4 +1,4 @@
-package com.chail.apputil.jdbc.hive;
+package com.chail.hive;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

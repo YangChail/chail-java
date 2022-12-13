@@ -1,14 +1,14 @@
-package com.chail.apputil.jdbc.mysql;
+package com.chail.mysql;
+
+import com.chail.oracle.JDBCUtil;
+import com.chail.oracle.JdbcDirver;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.chail.apputil.jdbc.jdbcutilsone.JDBCUtil;
-import com.chail.apputil.jdbc.jdbcutilsone.JdbcDirver;
 
 public class Mysql {
 
@@ -24,9 +24,9 @@ public class Mysql {
 //		String url = "jdbc:mysql://192.168.50.24:3306/test";
 		JDBCUtil jdbcUtil = new JDBCUtil(url, JdbcDirver.MYSQL_DRIVER, user, pass);
 		Connection connection = jdbcUtil.getConnection();
-		//inster(connection);
+		inster(connection);
 		//update(connection);
-		create(connection);
+		//create(connection);
 		
 	}
 		private static void update(Connection connection) throws SQLException {

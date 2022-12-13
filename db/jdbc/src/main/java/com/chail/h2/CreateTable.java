@@ -1,4 +1,4 @@
-package com.chail.apputil.jdbc.h2;
+package com.chail.h2;
 
 import java.sql.Connection;
 import java.util.ArrayList;

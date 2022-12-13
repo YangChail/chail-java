@@ -1,4 +1,4 @@
-package com.chail.apputil.jdbc.jdbcutils;
+package com.chail.jdbcutils;
 
 import java.sql.Connection;
 import java.sql.SQLException;

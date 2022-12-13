@@ -1,4 +1,4 @@
-package com.chail.apputil.jdbc.jdbcutilsone;
+package com.chail.oracle;
 
 public class JdbcDirver {
 
@@ -6,7 +6,7 @@ public class JdbcDirver {
 	
 	public final static  String HIVE_DRIVER="org.apache.hive.jdbc.HiveDriver";
 	
-	public final static  String MYSQL_DRIVER="com.mysql.jdbc.Driver";
+	public final static  String MYSQL_DRIVER="com.mysql.cj.jdbc.Driver";
 	
 	
 }

@@ -1,4 +1,4 @@
-package com.chail.apputil.jdbc.jdbcutils;
+package com.chail.jdbcutils;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;

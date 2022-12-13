@@ -1,4 +1,6 @@
-package com.chail.apputil.jdbc.h2;
+package com.chail.h2;
+
+import com.chail.oracle.JDBCUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,9 +15,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import com.chail.apputil.jdbc.jdbcutilsone.JDBCUtil;
-import com.chail.apputil.jdbc.jdbcutilsone.JdbcDirver;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 public class H4 {
 	public static String[] TABLE = new String[] { "table1", "table2", "table3", "table4", "table5", "table6", "table7", "table8",
@@ -33,7 +32,7 @@ public class H4 {
 
 	private static void insert() throws SQLException, InterruptedException {
 		ThreadPoolExecutor ex = new ThreadPoolExecutor(20, 20, 20L, TimeUnit.SECONDS,
-				new LinkedBlockingQueue<Runnable>(), new ThreadFactoryBuilder().setNameFormat("dm-builder-%d").build());
+				new LinkedBlockingQueue<Runnable>());
 		for (String str:TABLE) {
 			ex.execute(() -> {
 				try {
