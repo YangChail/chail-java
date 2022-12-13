@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow>
+    <chain name="mainChain">
+        <then value="init"/>
+        <then value="checkTableExsit(createTable|truncateTable)"/>
+        <then value="createIndex"/>
+        <then value="excutesql"/>
+        <then value="dropTable"/>
+
+    </chain>
+
+</flow>

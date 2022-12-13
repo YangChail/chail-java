@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="02718dde-8e89-4d6c-a680-d93282f725e4" name="Default Changelist" comment="add code">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/bigdata/kafka-kb/conf/config.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bigdata/kafka-kb/conf/config1.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bigdata/kafka-kb/conf/user.jaas" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bigdata/kafka-kb/src/main/java/app/chail/KakfaTests1.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/Agent.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/CheckJob.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/Count.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/Ds2.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/IncCheck.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/MssqlTimebug.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/TQType.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/Utils.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/V2JobService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/WriteMessegeToLog.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/demo/demo.iml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/demo/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/demo/src/main/java/org/chail/demo/demo.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/java/classloder/src/main/java/app/chail/agent/RouterClassLoader.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/java/classloder/src/main/java/com/mchz/ds/dsync/ZkRegister.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="1yUDz5mVBoCYZyAuVb1Ma1ne7EX" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/code/github/chail-java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\github\chail-java\db\jdbc\src\main\java\com\chail" />
+      <recent name="D:\code\github\chail-java\db\jdbc\src\main\java" />
+      <recent name="D:\code\github\chail-java\db\jdbc\src\main\resources\templates" />
+      <recent name="D:\code\github\chail-java\db\jdbc\src\main\resources\static" />
+      <recent name="D:\code\github\chail-java\db\jdbc\src\main\java\com\chail\datasupport\tools" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\github\chail-java\bigdata" />
+      <recent name="D:\code\github\chail-java\leecode" />
+      <recent name="D:\code\github\chail-java\other" />
+      <recent name="D:\code\github\chail-java\tools" />
+      <recent name="D:\code\github\chail-java\db" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.chail.test" />
+      <recent name="com.chail.datasupport.tools" />
+      <recent name="app.chail" />
+      <recent name="org.chail.liteflow.component" />
+      <recent name="org.chail.config" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.MinioTest">
+    <configuration name="MinioTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MinioTest" />
+      <module name="minio" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Of06" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Of06" />
+      <module name="code-demo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Of53" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Of53" />
+      <module name="code-demo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test111" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="classloder" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="of09" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="of09" />
+      <module name="code-demo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="of30" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="of30" />
+      <module name="code-demo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="xxl-job" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.chail.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="helloWorldApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jdbc" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chail.helloWorldApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Test111" />
+      <item itemvalue="Application.MinioTest" />
+      <item itemvalue="Application.Of06" />
+      <item itemvalue="Application.Of53" />
+      <item itemvalue="Application.of09" />
+      <item itemvalue="Application.of30" />
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Spring Boot.helloWorldApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.of30" />
+        <item itemvalue="Application.of09" />
+        <item itemvalue="Application.Of53" />
+        <item itemvalue="Application.Of06" />
+        <item itemvalue="Application.MinioTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02718dde-8e89-4d6c-a680-d93282f725e4" name="Default Changelist" comment="" />
+      <created>1632297532974</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632297532974</updated>
+      <workItem from="1632297535909" duration="16383000" />
+      <workItem from="1632379358658" duration="8151000" />
+      <workItem from="1632622347720" duration="25424000" />
+      <workItem from="1632813594404" duration="1225000" />
+      <workItem from="1632994387734" duration="388000" />
+      <workItem from="1633657813584" duration="470000" />
+      <workItem from="1633658305779" duration="1989000" />
+      <workItem from="1633746104406" duration="2197000" />
+      <workItem from="1633918804778" duration="598000" />
+      <workItem from="1633942542060" duration="4324000" />
+      <workItem from="1634520763639" duration="18825000" />
+      <workItem from="1634615925849" duration="4008000" />
+      <workItem from="1634692401551" duration="2451000" />
+      <workItem from="1634719038955" duration="1532000" />
+      <workItem from="1634786084179" duration="301000" />
+      <workItem from="1634807307899" duration="533000" />
+      <workItem from="1635155497927" duration="1196000" />
+      <workItem from="1635164987894" duration="592000" />
+      <workItem from="1635214286480" duration="2404000" />
+      <workItem from="1635315686040" duration="1187000" />
+      <workItem from="1635338313020" duration="595000" />
+      <workItem from="1635384257294" duration="1968000" />
+      <workItem from="1635492014675" duration="4484000" />
+      <workItem from="1635753766586" duration="113000" />
+      <workItem from="1635753905413" duration="21000" />
+      <workItem from="1635906471722" duration="1916000" />
+      <workItem from="1636093547699" duration="1747000" />
+      <workItem from="1636168053224" duration="1885000" />
+      <workItem from="1636340783181" duration="594000" />
+      <workItem from="1636437930791" duration="1633000" />
+      <workItem from="1636512780869" duration="1197000" />
+      <workItem from="1636522863836" duration="592000" />
+      <workItem from="1636597662851" duration="594000" />
+      <workItem from="1636620034713" duration="1391000" />
+      <workItem from="1636682401065" duration="14362000" />
+      <workItem from="1636941161273" duration="593000" />
+      <workItem from="1637810916580" duration="2067000" />
+      <workItem from="1637840915192" duration="662000" />
+      <workItem from="1637914025125" duration="18316000" />
+      <workItem from="1638850621930" duration="1153000" />
+      <workItem from="1638943283630" duration="594000" />
+      <workItem from="1639020493634" duration="594000" />
+      <workItem from="1639099737210" duration="1228000" />
+      <workItem from="1639539681486" duration="795000" />
+      <workItem from="1639621027383" duration="2217000" />
+      <workItem from="1639647901365" duration="249000" />
+      <workItem from="1639651104956" duration="2122000" />
+      <workItem from="1639724931524" duration="740000" />
+      <workItem from="1639989011792" duration="763000" />
+      <workItem from="1640079676756" duration="2758000" />
+      <workItem from="1640586789410" duration="9437000" />
+      <workItem from="1640603632321" duration="9644000" />
+      <workItem from="1640684574992" duration="639000" />
+      <workItem from="1640759842454" duration="1900000" />
+      <workItem from="1640859320388" duration="664000" />
+      <workItem from="1640861622181" duration="86000" />
+      <workItem from="1641288828594" duration="2552000" />
+      <workItem from="1641363712970" duration="2366000" />
+      <workItem from="1641436803465" duration="9000" />
+      <workItem from="1641436826539" duration="19000" />
+      <workItem from="1641437819797" duration="2477000" />
+      <workItem from="1641448878348" duration="30000" />
+      <workItem from="1641448931254" duration="2256000" />
+      <workItem from="1641471332131" duration="714000" />
+      <workItem from="1642038117675" duration="12805000" />
+      <workItem from="1643008652444" duration="2145000" />
+      <workItem from="1643019617315" duration="13000" />
+      <workItem from="1645151565076" duration="1627000" />
+      <workItem from="1648019172576" duration="1411000" />
+      <workItem from="1648020616228" duration="5121000" />
+      <workItem from="1648085219597" duration="22159000" />
+      <workItem from="1648722497017" duration="1646000" />
+      <workItem from="1648804386823" duration="1840000" />
+      <workItem from="1648892570339" duration="594000" />
+      <workItem from="1649208757078" duration="1782000" />
+      <workItem from="1649242753553" duration="419000" />
+      <workItem from="1652358445807" duration="7012000" />
+      <workItem from="1652663781218" duration="7085000" />
+      <workItem from="1653984679718" duration="14986000" />
+      <workItem from="1654044983330" duration="24643000" />
+      <workItem from="1654131968807" duration="9390000" />
+      <workItem from="1654164085536" duration="40693000" />
+      <workItem from="1654515212901" duration="4693000" />
+      <workItem from="1654525941620" duration="44076000" />
+      <workItem from="1654739471388" duration="31330000" />
+      <workItem from="1655083677611" duration="2070000" />
+      <workItem from="1655099061651" duration="20927000" />
+      <workItem from="1655257702256" duration="8973000" />
+      <workItem from="1655289015924" duration="594000" />
+      <workItem from="1655294427387" duration="1187000" />
+      <workItem from="1655342201029" duration="5082000" />
+      <workItem from="1655372803267" duration="5424000" />
+      <workItem from="1655730436345" duration="2159000" />
+      <workItem from="1655782510573" duration="666000" />
+      <workItem from="1655864840989" duration="9376000" />
+      <workItem from="1655944942214" duration="20168000" />
+      <workItem from="1656033355907" duration="2970000" />
+      <workItem from="1656056356715" duration="9778000" />
+      <workItem from="1656127809181" duration="11571000" />
+      <workItem from="1656311328224" duration="23694000" />
+      <workItem from="1656555192642" duration="1203000" />
+      <workItem from="1656637786464" duration="1267000" />
+      <workItem from="1656896903654" duration="8738000" />
+      <workItem from="1656983026510" duration="33000" />
+      <workItem from="1656983079281" duration="420000" />
+      <workItem from="1656983522074" duration="3846000" />
+      <workItem from="1657070363707" duration="18435000" />
+      <workItem from="1657241622046" duration="1477000" />
+      <workItem from="1657246055103" duration="2591000" />
+      <workItem from="1657265008711" duration="4280000" />
+      <workItem from="1657503646613" duration="1254000" />
+      <workItem from="1657534988149" duration="2632000" />
+      <workItem from="1657587358511" duration="19842000" />
+      <workItem from="1657783402471" duration="1029000" />
+      <workItem from="1657851405654" duration="667000" />
+      <workItem from="1657868700887" duration="596000" />
+      <workItem from="1658125891934" duration="716000" />
+      <workItem from="1658193323918" duration="595000" />
+      <workItem from="1658283089147" duration="971000" />
+      <workItem from="1658284193294" duration="301000" />
+      <workItem from="1658284629892" duration="3636000" />
+      <workItem from="1658295646017" duration="1196000" />
+      <workItem from="1658317776872" duration="3705000" />
+      <workItem from="1658375352808" duration="1330000" />
+      <workItem from="1658395179201" duration="4591000" />
+      <workItem from="1658452570494" duration="866000" />
+      <workItem from="1658458682768" duration="5402000" />
+      <workItem from="1658711671211" duration="1979000" />
+      <workItem from="1658844671100" duration="19924000" />
+      <workItem from="1659264392358" duration="8654000" />
+      <workItem from="1659404732741" duration="13000" />
+      <workItem from="1659409409721" duration="3245000" />
+      <workItem from="1660189227181" duration="1416000" />
+      <workItem from="1660275297115" duration="524000" />
+      <workItem from="1660715821040" duration="2470000" />
+      <workItem from="1660724384063" duration="633000" />
+      <workItem from="1660802096222" duration="1270000" />
+      <workItem from="1661994432081" duration="6000" />
+      <workItem from="1665477850497" duration="3180000" />
+      <workItem from="1665538135094" duration="1449000" />
+      <workItem from="1665632641944" duration="595000" />
+      <workItem from="1666952784316" duration="1062000" />
+      <workItem from="1667583960820" duration="1383000" />
+      <workItem from="1667888346301" duration="714000" />
+      <workItem from="1668052542246" duration="365000" />
+      <workItem from="1668130401963" duration="2233000" />
+      <workItem from="1668148340494" duration="594000" />
+      <workItem from="1668418499796" duration="6493000" />
+      <workItem from="1668475872098" duration="5408000" />
+      <workItem from="1668577806962" duration="11150000" />
+      <workItem from="1669253677363" duration="3892000" />
+      <workItem from="1669344253757" duration="287000" />
+      <workItem from="1669344569015" duration="105000" />
+      <workItem from="1669344684161" duration="142000" />
+      <workItem from="1669344838254" duration="3092000" />
+      <workItem from="1669347983204" duration="225000" />
+      <workItem from="1669348223885" duration="5138000" />
+      <workItem from="1669795805658" duration="1540000" />
+      <workItem from="1669888230943" duration="820000" />
+      <workItem from="1669946173219" duration="1785000" />
+      <workItem from="1669973289689" duration="609000" />
+      <workItem from="1670204329678" duration="593000" />
+      <workItem from="1670570492031" duration="1160000" />
+      <workItem from="1670831893671" duration="598000" />
+      <workItem from="1670896703889" duration="131000" />
+      <workItem from="1670917828807" duration="811000" />
+      <workItem from="1670918653287" duration="992000" />
+    </task>
+    <task id="LOCAL-00001" summary="kafka kerberos">
+      <created>1632359895346</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1632359895346</updated>
+    </task>
+    <task id="LOCAL-00002" summary="kafka kerberos">
+      <created>1632723365639</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1632723365639</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add">
+      <created>1634024268450</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634024268450</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add java agent">
+      <created>1634557447163</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634557447163</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add code">
+      <created>1648173817163</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1648173817163</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add code">
+      <created>1655878317543</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655878317543</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add code">
+      <created>1656487777009</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1656487777009</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add code">
+      <created>1665477875067</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665477875068</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add code">
+      <created>1665479407164</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665479407164</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add code">
+      <created>1670918967505</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670918967505</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add code">
+      <created>1670919229066</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670919229066</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add code">
+      <created>1670919286252</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670919286252</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.kafka:kafka_2.13" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.hadoop:hadoop-common" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.spark:spark-core_2.12" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.kafka:kafka-clients" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-websocket" />
+    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf" />
+    <option featureType="dependencySupport" implementationName="java:io.minio:minio" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.ws.rs:jakarta.ws.rs-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="kafka kerberos" />
+    <MESSAGE value="add" />
+    <MESSAGE value="add java agent" />
+    <MESSAGE value="add code" />
+    <option name="LAST_COMMIT_MESSAGE" value="add code" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/Count.java</url>
+          <line>21</line>
+          <properties class="com.chail.datasupport.tools.Count" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/DelIndex.java</url>
+          <line>21</line>
+          <properties class="com.chail.datasupport.tools.DelIndex" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/datasupport/tools/TQType.java</url>
+          <line>22</line>
+          <properties class="com.chail.datasupport.tools.TQType" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/db/jdbc/src/main/java/Mysql.java</url>
+          <line>15</line>
+          <properties class="Mysql" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/oracle/database/jdbc/ojdbc8/12.2.0.1/ojdbc8-12.2.0.1.jar!/oracle/net/nt/TimeoutSocketChannel.class</url>
+          <line>117</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/test/OracleTests.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/db/jdbc/src/main/java/com/chail/test/OracleTests.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/oracle/database/jdbc/ojdbc8/12.2.0.1/ojdbc8-12.2.0.1.jar!/oracle/net/nt/TimeoutSocketChannel.class</url>
+          <line>64</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/oracle/database/jdbc/ojdbc8/12.2.0.1/ojdbc8-12.2.0.1.jar!/oracle/jdbc/driver/PhysicalConnection.class</url>
+          <line>4417</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/oracle/database/jdbc/ojdbc8/12.2.0.1/ojdbc8-12.2.0.1.jar!/oracle/jdbc/driver/PhysicalConnection.class</url>
+          <line>4421</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/oracle/database/jdbc/ojdbc8/12.2.0.1/ojdbc8-12.2.0.1.jar!/oracle/jdbc/driver/PhysicalConnection.class</url>
+          <line>4440</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/db/jdbc/src/main/java/Mysql.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/db/jdbc/src/main/java/Mysql.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/leecode/code-demo/src/main/java/of30.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/leecode/code-demo/src/main/java/of30.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/leecode/code-demo/src/main/java/Of06.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/leecode/code-demo/src/main/java/Of53.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/leecode/code-demo/src/main/java/Of53.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/leecode/code-demo/src/main/java/Of53.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigdata/minio/src/main/java/MinioTest.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bigdata/minio/src/main/java/MinioTest.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="net.sourceforge.jtds.jdbc.ResponseStream" memberName="buffer" />
+        <PinnedItemInfo parentTag="io.minio.messages.Bucket" memberName="name" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/chail_java$CheckJob.ic" NAME="CheckJob Coverage Results" MODIFIED="1653988100771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.chail.datasupport.tools.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/chail_java$TQType.ic" NAME="TQType Coverage Results" MODIFIED="1657698250668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.chail.datasupport.tools.*</FILTER>
+    </SUITE>
+  </component>
+</project>

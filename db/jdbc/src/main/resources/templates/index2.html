@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>MyWebProject</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+	$(function () {
+            //获取单击按钮对象，绑定单击事件
+            $("#getdata").click(function () {
+                //发送get形式的Ajax异步请求
+                $.get("/templates", function (result) {
+                    console.log(result)
+                    for (var i=0,len=result.length; i<len; i++){
+                        document.write(result[i].jobName + "<br>");
+                    }
+
+                    }, "json");
+            })
+        });
+</script>
+</head>
+
+<body>
+<table id="imgList" width="450" border="0" align="center" cellspacing="0">
+    <tr id="title">
+        <td width="100" bgcolor="lightblue"><div align="center">
+            <div align="left">图片名称</div>
+        </div></td>
+        <td width="200" bgcolor="lightblue"><div align="center">
+            <div align="left">url</div>
+        </div></td>
+        <td width="80" bgcolor="lightblue"><div align="center">
+            <div align="left">图片</div>
+        </div></td>
+    </tr>
+</table>
+
+</body>
+
+
+
+
+<button id="getdata" type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+
+</html>
