@@ -1,0 +1,70 @@
+https://zhuanlan.zhihu.com/p/395394287
+
+
+
+
+spark-submit  \
+--jars /opt/hudidemo/fastjson-1.2.83.jar,/opt/hudidemo/hudi-master.jar,/opt/hudidemo/hudi-utilities-bundle_2.12-0.11.1.jar \
+--driver-class-path /opt/spark/conf:/opt/spark/jars/*:/opt/hudidemo/hudi-master.jar:/opt/hudidemo/hudi-utilities-bundle_2.12-0.11.1.jar:/opt/hudidemo/fastjson-1.2.83.jar \
+--class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer \
+--conf "spark.hadoop.fs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider" \
+--conf 'spark.hadoop.fs.s3a.access.key=chail' \
+--conf 'spark.hadoop.fs.s3a.secret.key=hzmc321#' \
+--conf 'spark.hadoop.fs.s3a.endpoint=http://192.168.51.194:9000' \
+--conf 'spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem' \
+--conf 'spark.hadoop.fs.s3a.path.style.access=true' \
+--conf 'spark.driver.extraJavaOptions=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=55005' \
+spark-internal --props file:///opt/hudidemo/kafka.properties \
+--target-base-path /hudi/chail_test \
+--table-type COPY_ON_WRITE  \
+--target-table chail_test  \
+--source-ordering-field id \
+--source-class org.chail.MyJsonKafkaSource \
+--schemaprovider-class org.chail.DataSchemaProviderExample \
+--transformer-class org.chail.TransformerExample \
+--continuous
+
+//使用Spark查询
+
+spark-shell --master yarn
+
+val roViewDF = spark.read.format("org.apache.hudi").load("/hudi/chail_test/*")
+roViewDF.createOrReplaceTempView("chail_test")
+spark.sql("select * from  chail_test").show()
+
+
+//kafka.properties配置
+
+// hudi配置
+hoodie.datasource.write.recordkey.field=uid
+hoodie.datasource.write.partitionpath.field=
+hoodie.datasource.write.keygenerator.class=org.apache.hudi.keygen.NonpartitionedKeyGenerator
+hoodie.datasource.write.hive_style_partitioning=true
+hoodie.delete.shuffle.parallelism=10
+hoodie.upsert.shuffle.parallelism=10
+hoodie.bulkinsert.shuffle.parallelism=10
+hoodie.insert.shuffle.parallelism=10
+hoodie.finalize.write.parallelism=10
+hoodie.cleaner.parallelism=10
+hoodie.datasource.write.precombine.field=uid
+hoodie.base.path = /hudi
+hoodie.timeline.layout.version = 1
+hoodie.hadoop.fs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider
+
+// hive config
+hoodie.datasource.hive_sync.table=delta_demo2
+hoodie.datasource.hive_sync.partition_fields=
+hoodie.datasource.hive_sync.assume_date_partitioning=false
+hoodie.datasource.hive_sync.partition_extractor_class=org.apache.hudi.hive.NonPartitionedExtractor
+hoodie.datasource.hive_sync.use_jdbc=false
+
+// Kafka Source topic
+hoodie.deltastreamer.source.kafka.topic=chail-test
+// checkpoint
+hoodie.deltastreamer.checkpoint.provider.path=s3a://hudi/checkpoint/
+
+// Kafka props
+bootstrap.servers=192.168.51.196
+auto.offset.reset=earliest
+group.id=a5
+offset.rang.limit=10000

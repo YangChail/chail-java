@@ -13,8 +13,8 @@
         <module>bigdata/hdfs-kerberos</module>
         <module>bigdata/minio</module>
         <module>bigdata/spark</module>
-        <module>bigdata/zk</module>
-        <module>bigdata/kafka-kb</module>
+<!--        <module>bigdata/zk</module>-->
+<!--        <module>bigdata/kafka-kb</module>-->
 
         <module>java/classloder</module>
         <module>java/yaml</module>
@@ -25,6 +25,8 @@
         <module>leecode/code-demo</module>
 
         <module>project/wz</module>
+        <module>bigdata/debezium</module>
+        <module>bigdata/hudi</module>
 
     </modules>
 
@@ -45,7 +47,7 @@
         <repository>
             <id>aliyun</id>
             <name>aliyun</name>
-            <url>http://repo1.maven.org/maven2/</url>
+            <url>https://repo1.maven.org/maven2/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -63,6 +65,26 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.17.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+        </dependency>
 
     </dependencies>
 
