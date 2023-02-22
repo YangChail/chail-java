@@ -41,8 +41,12 @@ public class TransformerExample implements Transformer, Serializable {
         TypedProperties properties) {
         JavaRDD<Row> rowJavaRdd = rowDataset.toJavaRDD();
         List<Row> rowList = new ArrayList<>();
-        for (Row row : rowJavaRdd.collect()) {
-            rowList.add(buildRow(row));
+        try{
+            for (Row row : rowJavaRdd.collect()) {
+                rowList.add(buildRow(row));
+            }
+        }catch (Exception e){
+
         }
         JavaRDD<Row> stringJavaRdd = jsc.parallelize(rowList);
         List<StructField> fields = new ArrayList<>();

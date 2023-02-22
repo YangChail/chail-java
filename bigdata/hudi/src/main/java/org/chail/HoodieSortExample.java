@@ -21,8 +21,7 @@ import scala.Tuple2;
  *
  * @since 2021-03-17
  */
-public class HoodieSortExample<T extends HoodieRecordPayload>
-    implements BulkInsertPartitioner<JavaRDD<HoodieRecord<T>>> {
+public class HoodieSortExample<T extends HoodieRecordPayload> implements BulkInsertPartitioner<JavaRDD<HoodieRecord<T>>> {
     @Override
     public JavaRDD<HoodieRecord<T>> repartitionRecords(JavaRDD<HoodieRecord<T>> records, int outputSparkPartitions) {
         JavaPairRDD<String,

@@ -1,0 +1,118 @@
+spark-submit  \
+--jars /opt/hudidemo/fastjson-1.2.83.jar,/opt/hudidemo/hudi-master.jar,/opt/hudidemo/hudi-utilities-bundle_2.12-0.11.1.jar \
+--driver-class-path /opt/spark/conf:/opt/spark/jars/*:/opt/hudidemo/hudi-master.jar:/opt/hudidemo/hudi-utilities-bundle_2.12-0.11.1.jar:/opt/hudidemo/fastjson-1.2.83.jar \
+--class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer \
+--conf "spark.hadoop.fs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider" \
+--conf 'spark.hadoop.fs.s3a.access.key=chail' \
+--conf 'spark.hadoop.fs.s3a.secret.key=hzmc321#' \
+--conf 'spark.hadoop.fs.s3a.endpoint=http://192.168.51.194:9000' \
+--conf 'spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem' \
+--conf 'spark.hadoop.fs.s3a.path.style.access=true' \
+--conf 'spark.driver.extraJavaOptions=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=55005' \
+spark-internal --props file:///opt/hudidemo/kafka.properties \
+--target-base-path /hudi/chail_test \
+--table-type COPY_ON_WRITE  \
+--target-table chail_test  \
+--source-ordering-field id \
+--source-class org.chail.MyJsonKafkaSource \
+--schemaprovider-class org.chail.DataSchemaProviderExample \
+--transformer-class org.chail.TransformerExample \
+--enable-hive-sync \
+--hoodie-conf 'hoodie.deltastreamer.source.kafka.topic=chail_test' \
+--hoodie-conf 'hoodie.datasource.hive_sync.table=chail_test' \
+--hoodie-conf 'hoodie.datasource.hive_sync.database=chail' \
+--hoodie-conf 'hoodie.datasource.write.recordkey.field=id' \
+--hoodie-conf 'hoodie.datasource.write.precombine.field=id' \
+--hoodie-conf 'hoodie.base.path = /hudi/chail_test' \
+--hoodie-conf 'hoodie.deltastreamer.checkpoint.provider.path=/hudi/chail_test' \
+--initial-checkpoint-provider org.apache.hudi.utilities.checkpointing.InitialCheckpointFromAnotherHoodieTimelineProvider \
+--continuous
+
+
+
+#join
+
+spark-submit  \
+--jars /opt/hudidemo/fastjson-1.2.83.jar,/opt/hudidemo/hudi-master.jar,/opt/hudidemo/hudi-utilities-bundle_2.12-0.11.1.jar \
+--driver-class-path /opt/spark/conf:/opt/spark/jars/*:/opt/hudidemo/hudi-master.jar:/opt/hudidemo/hudi-utilities-bundle_2.12-0.11.1.jar:/opt/hudidemo/fastjson-1.2.83.jar \
+--class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer \
+--conf 'spark.driver.extraJavaOptions=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=55006' \
+--conf "spark.hadoop.fs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider" \
+--conf 'spark.hadoop.fs.s3a.access.key=chail' \
+--conf 'spark.hadoop.fs.s3a.secret.key=hzmc321#' \
+--conf 'spark.hadoop.fs.s3a.endpoint=http://192.168.51.194:9000' \
+--conf 'spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem' \
+--conf 'spark.hadoop.fs.s3a.path.style.access=true' \
+spark-internal --props file:///opt/hudidemo/kafka.properties \
+--source-class org.apache.hudi.utilities.sources.HoodieIncrSource \
+--target-base-path /hudi/test_join \
+--target-table test_join \
+--table-type MERGE_ON_READ \
+--source-ordering-field id \
+--op UPSERT \
+--enable-hive-sync \
+--transformer-class org.apache.hudi.utilities.transform.SqlQueryBasedTransformer \
+--hoodie-conf 'hoodie.deltastreamer.transformer.sql=SELECT * FROM <SRC> ' \
+--hoodie-conf 'hoodie.deltastreamer.source.hoodieincr.path=/hudi/chail_test' \
+--hoodie-conf 'hoodie.deltastreamer.source.hoodieincr.num instants=5' \
+--hoodie-conf 'hoodie.datasource.hive_sync.table=test_join' \
+--hoodie-conf 'hoodie.datasource.hive_sync.database=chail' \
+--hoodie-conf 'hoodie.datasource.write.recordkey.field=id' \
+--hoodie-conf 'hoodie.datasource.write.datasource.write.precombine.field=id' \
+--hoodie-conf 'hoodie.datasource.write.keygenerator.consistent.logical.timestamp.enabled=false' \
+--hoodie-conf 'hoodie.base.path = /hudi/test_join' \
+--hoodie-conf 'hoodie.deltastreamer.source.hoodieincr.missing.checkpoint.strategy=READ_LATEST' \
+--min-sync-interval-seconds 10 \
+--continuous
+
+
+#mege
+
+spark-submit  \
+--jars /opt/hudidemo/fastjson-1.2.83.jar,/opt/hudidemo/hudi-master.jar,/opt/hudidemo/hudi-utilities-bundle_2.12-0.11.1.jar \
+--driver-class-path /opt/spark/conf:/opt/spark/jars/*:/opt/hudidemo/hudi-master.jar:/opt/hudidemo/hudi-utilities-bundle_2.12-0.11.1.jar:/opt/hudidemo/fastjson-1.2.83.jar \
+--class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer \
+--conf 'spark.driver.extraJavaOptions=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=55006' \
+--conf "spark.hadoop.fs.s3a.aws.credentials.provider=org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider" \
+--conf 'spark.hadoop.fs.s3a.access.key=chail' \
+--conf 'spark.hadoop.fs.s3a.secret.key=hzmc321#' \
+--conf 'spark.hadoop.fs.s3a.endpoint=http://192.168.51.194:9000' \
+--conf 'spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem' \
+--conf 'spark.hadoop.fs.s3a.path.style.access=true' \
+spark-internal --props file:///opt/hudidemo/kafka.properties \
+--source-class org.apache.hudi.utilities.sources.HoodieIncrSource \
+--target-base-path /hudi/test_join2 \
+--target-table test_join2 \
+--table-type MERGE_ON_READ \
+--source-ordering-field id \
+--op UPSERT \
+--enable-hive-sync \
+--transformer-class org.chail.ChailSqlQueryBasedTransformer \
+--hoodie-conf 'hoodie.deltastreamer.transformer.sql=merge into test2 as target using <SRC> as source on target.id = source.id when not matched then insert (id, name, idcard, address) values(source.id, source.name, source.idcard, source.address) ; select now()' \
+--hoodie-conf 'hoodie.deltastreamer.source.hoodieincr.path=/hudi/chail_test' \
+--hoodie-conf 'hoodie.deltastreamer.source.hoodieincr.num instants=5' \
+--hoodie-conf 'hoodie.datasource.hive_sync.table=test_join2' \
+--hoodie-conf 'hoodie.datasource.hive_sync.database=chail' \
+--hoodie-conf 'hoodie.datasource.write.recordkey.field=id' \
+--hoodie-conf 'hoodie.datasource.write.datasource.write.precombine.field=id' \
+--hoodie-conf 'hoodie.datasource.write.keygenerator.consistent.logical.timestamp.enabled=false' \
+--hoodie-conf 'hoodie.base.path = /hudi/test_join2' \
+--hoodie-conf 'hoodie.deltastreamer.source.hoodieincr.missing.checkpoint.strategy=READ_LATEST' \
+--min-sync-interval-seconds 10 \
+--continuous
+
+
+
+
+
+
+
+
+@config
+--hoodie-conf hoodie.deltastreamer.source.kafka.topic=chail_test \
+--hoodie-conf hoodie.datasource.hive_sync.table=chail_test \
+--hoodie-conf hoodie.datasource.hive_sync.database=chail \
+--hoodie-conf hoodie.datasource.write.recordkey.field=id \
+--hoodie-conf hoodie.datasource.write.precombine.field=i \
+--hoodie-conf hoodie.base.path = /hudi/chail_test \
+#inc sql
