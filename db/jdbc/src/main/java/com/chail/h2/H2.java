@@ -7,9 +7,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import com.chail.apputil.jdbc.jdbcutilsone.JDBCUtil;
-import com.chail.apputil.jdbc.jdbcutilsone.JdbcDirver;
-
 public class H2 {
 
 	private static int i = 0;

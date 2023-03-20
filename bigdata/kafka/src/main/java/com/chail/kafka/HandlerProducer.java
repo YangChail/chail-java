@@ -1,4 +1,4 @@
-package com.chail.apputil.kafka;
+package com.chail.kafka;
 public class HandlerProducer implements Runnable {  
   
     private String message;  

@@ -1,4 +1,4 @@
-package com.chail.apputil.kafka;
+package com.chail.kafka;
 
 import java.util.Arrays;
 import java.util.List;

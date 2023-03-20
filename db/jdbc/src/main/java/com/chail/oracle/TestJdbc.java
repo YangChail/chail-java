@@ -1,17 +1,61 @@
 package com.chail.oracle;
 
+import java.io.File;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class TestJdbc {
 
 
-	public void testOracle9i() throws Exception {
-		String user = "chail";
-		String pass = "chail";
-		String url = "jdbc:oracle:thin:@192.168.210.80:1521/ora9i";
+	public static JDBCUtil testOracle9i() throws Exception {
+		String user = "system";
+		String pass = "oracle";
+		String url = "jdbc:oracle:thin:@192.168.42.81:1521/orcl";
 		JDBCUtil jdbcUtil = new JDBCUtil(url, JdbcDirver.ORACLE_DRIVER, user, pass);
-		jdbcUtil.getConnection();
-		String sql = "SELECT ALL_TAB_COLUMNS.OWNER,ALL_TAB_COLUMNS.TABLE_NAME,ALL_TAB_COLUMNS.COLUMN_NAME,ALL_TAB_COLUMNS.DATA_TYPE,ALL_TAB_COLUMNS.CHAR_LENGTH,ALL_TAB_COLUMNS.NULLABLE,ALL_TAB_COLUMNS.DATA_PRECISION,ALL_TAB_COLUMNS.DATA_SCALE,ALL_TAB_COLUMNS.DATA_LENGTH,ALL_TAB_COLUMNS.CHAR_USED,ALL_TAB_COLUMNS.COLUMN_ID,ALL_COL_COMMENTS.COMMENTS,ALL_TAB_COLUMNS.DATA_DEFAULT,ALL_TAB_COLUMNS.DEFAULT_LENGTH,ALL_TAB_COLUMNS.DATA_TYPE_MOD,ALL_TAB_COLUMNS.DATA_TYPE_OWNER FROM ALL_TAB_COLUMNS, ALL_COL_COMMENTS WHERE ALL_TAB_COLUMNS.OWNER = ALL_COL_COMMENTS.OWNER AND ALL_TAB_COLUMNS.TABLE_NAME = ALL_COL_COMMENTS.TABLE_NAME AND ALL_TAB_COLUMNS.COLUMN_NAME=ALL_COL_COMMENTS.COLUMN_NAME AND ALL_TAB_COLUMNS.OWNER NOT IN ('SYSTEM','SYS','OUTLN','DIP','ORACLE_OCM','DBSNMP','APPQOSSYS','WMSYS','EXFSYS','CTXSYS','XDB','ANONYMOUS','XS$NULL','ORDSYS','ORDDATA','ORDPLUGINS','SI_INFORMTN_SCHEMA','MDSYS','OLAPSYS','MDDATA','SPATIAL_WFS_ADMIN_USR','SPATIAL_CSW_ADMIN_USR','SYSMAN','MGMT_VIEW','APEX_030200','FLOWS_FILES','APEX_PUBLIC_USER','OWBSYS','OWBSYS_AUDIT') AND NOT EXISTS (SELECT *  FROM ALL_VIEWS WHERE OWNER = ALL_TAB_COLUMNS.OWNER AND VIEW_NAME = ALL_TAB_COLUMNS.TABLE_NAME) ORDER BY 1, 2, 11";
-		jdbcUtil.executeQuery(sql);
-		jdbcUtil.releaseConnectn();
+		return jdbcUtil;
 	}
 
+	public static  void write() throws Exception {
+		File file=new File("D://test.txt");
+		MmapFile mmapFile=new MmapFile(file,4);
+		JDBCUtil jdbcUtil = testOracle9i();
+		Connection connection = jdbcUtil.getConnection();
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery("select *  FROM DQRMYY_W1.TEST_1");
+		int i=0;
+		while (resultSet.next()){
+			String string = resultSet.getString(1);
+			byte[] aByte=string.getBytes();
+			mmapFile.write(aByte);
+			if(i==0){
+				System.out.println(string);
+			}
+			i++;
+			if(i%10000==0){
+				System.out.println(i);
+			}
+			if(i==100000){
+				break;
+			}
+		}
+		mmapFile.flush();
+		mmapFile.close();
+	}
+
+	public static void read() throws Exception {
+		File file=new File("D://test.txt");
+		MmapFile mmapFile=new MmapFile(file,4);
+		byte[] read = mmapFile.read(0, 2);
+		String ss=new String(read);
+		System.out.println();
+
+	}
+
+
+	public static void main(String[] args) throws Exception {
+		write();
+		read();
+	}
 }

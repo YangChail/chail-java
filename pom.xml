@@ -27,6 +27,7 @@
         <module>project/wz</module>
         <module>bigdata/debezium</module>
         <module>bigdata/hudi</module>
+        <module>tomcat/httpserver/httpserver</module>
 
     </modules>
 

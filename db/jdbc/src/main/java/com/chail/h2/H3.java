@@ -1,13 +1,13 @@
 package com.chail.h2;
 
+import com.chail.oracle.JDBCUtil;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-import com.chail.apputil.jdbc.jdbcutilsone.JDBCUtil;
-import com.chail.apputil.jdbc.jdbcutilsone.JdbcDirver;
 
 public class H3 {
 

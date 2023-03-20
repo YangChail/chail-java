@@ -1,4 +1,4 @@
-package com.chail.apputil.kafka;
+package com.chail.kafka;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +18,7 @@ public class KafkaUtils {
 
 	public static Properties getPro(String group) {
 		Properties props = new Properties();
-		props.put("bootstrap.servers", "192.168.241.104:9092");
+		props.put("bootstrap.servers", "127.0.0.1:1527");
 		props.put("group.id", group);
 		props.put("enable.auto.commit", "true");
 		props.put("auto.commit.interval.ms", "1000");
