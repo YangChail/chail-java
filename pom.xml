@@ -28,6 +28,8 @@
         <module>bigdata/debezium</module>
         <module>bigdata/hudi</module>
         <module>tomcat/httpserver/httpserver</module>
+        <module>demo/temporal/temporal</module>
+        <module>java/thread/thread</module>
 
     </modules>
 

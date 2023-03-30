@@ -1,0 +1,14 @@
+class Solution {
+public int minArray(int[] numbers) {
+for(int i = 0;i < numbers.length - 1;i++){
+if (numbers[i] > numbers[i + 1]) {
+return numbers[i+1];
+}
+}
+return numbers[0];
+
+    }
+
+}
+
+相邻数字比较，只要是小的数字肯定是最小的数字，因为原数组是升序的，旋转后，第一个遇到的小的数字一定是最小的。如果数组旋转之后还是升序的，那么返回数组的第一个数字就是最小数字。
