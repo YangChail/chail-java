@@ -30,6 +30,8 @@
         <module>tomcat/httpserver/httpserver</module>
         <module>demo/temporal/temporal</module>
         <module>java/thread/thread</module>
+        <module>demo/cdc</module>
+        <module>java/graaljs/graaljs</module>
 
     </modules>
 
