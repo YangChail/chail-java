@@ -29,7 +29,7 @@ public class JsApp {
         //test1();
         //javaonJs();
 
-        jv2Js();
+        jsv2();
     }
 
     private static void test1(){
@@ -44,14 +44,49 @@ public class JsApp {
     }
 
 
+    private static void jsv2() throws ScriptException {
 
-    private static void jv2Js() throws ScriptException {
-        //System.setProperty("graaljs.insecure-scriptengine-access","true");
+        String code="function isIdNumber(idNum) {\n" +
+                "  // 身份证号码正则表达式\n" +
+                "  var idNumPattern = /^[1-9]\\d{5}((19\\d{2})|(20[0-2]\\d))((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$/;\n" +
+                "   \n" +
+                "  if (!idNumPattern.test(idNum)) {\n" +
+                "    return false;\n" +
+                "  }\n" +
+                "   \n" +
+                "  // 校验码计算\n" +
+                "  var weightedSum = 0;\n" +
+                "  for (var i = 0; i < 17; i++) {\n" +
+                "    weightedSum += parseInt(idNum.charAt(i)) * [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2][i];\n" +
+                "  }\n" +
+                "  var checkCode = [\"1\", \"0\", \"X\", \"9\", \"8\", \"7\", \"6\", \"5\", \"4\", \"3\", \"2\"][weightedSum % 11];\n" +
+                "  return checkCode === idNum.charAt(17).toUpperCase();\n" +
+                "}\n" +
+                "// 获取字段名\n" +
+                "var col_name=ds_col_name;\n" +
+                "var col_var=dsContext.getValueFromColumn(col_name)\n" +
+                "isIdNumber(col_var);";
         System.setProperty("polyglot.js.nashorn-compat","true");
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("graal.js");
-        // 添加类路径参数和模块路径参数
-        //engine.getBindings(javax.script.ScriptContext.ENGINE_SCOPE).put("classpath", System.getProperty("java.class.path"));
-        //engine.getBindings(javax.script.ScriptContext.ENGINE_SCOPE).put("modulepath", System.getProperty("jdk.module.path"));
+        engine.put("ds_col_name","aa");
+        engine.put("dsContext", new DsContext());
+        Object result = engine.eval(code);
+        System.out.println(result); // Output: 5
+
+    }
+
+
+    public static class DsContext {
+        public Object getValueFromColumn(String aa) {
+            return "450481197804234432";
+        }
+    }
+
+
+    private static void jv2Js() throws ScriptException {
+        //先设置环境变量
+        System.setProperty("polyglot.js.nashorn-compat","true");
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("graal.js");
         // 将Java对象绑定到JavaScript上下文中
         engine.put("myObject", new MyJavaObject1());
         String script = "function add(a, b) " +
@@ -72,7 +107,7 @@ public class JsApp {
 
     private  static  void javaonJs(){
 
-// 在上下文中注册一个Java对象
+        // 在上下文中注册一个Java对象
         MyJavaObject myJavaObject = new MyJavaObject();
 
         Context context = Context.newBuilder("js")

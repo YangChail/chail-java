@@ -27,11 +27,15 @@
         <module>project/wz</module>
         <module>bigdata/debezium</module>
         <module>bigdata/hudi</module>
+        <module>bigdata/flink-cdc</module>
+        <module>bigdata/flink</module>
+
+
         <module>tomcat/httpserver/httpserver</module>
         <module>demo/temporal/temporal</module>
         <module>java/thread/thread</module>
-        <module>demo/cdc</module>
-        <module>java/graaljs/graaljs</module>
+        <module>java/graaljs</module>
+
 
     </modules>
 
