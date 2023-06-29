@@ -24,7 +24,7 @@ public class MySqlSourceExample {
       // set 4 parallel source tasks
       .setParallelism(4)
       .print().setParallelism(1); // use parallelism 1 for sink to keep message ordering
-    env.execute("Print MySQL Snapshot + Binlog");
+      env.execute("Print MySQL Snapshot + Binlog");
 
 
 

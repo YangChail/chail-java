@@ -45,8 +45,9 @@ public class JsApp {
 
 
     private static void jsv2() throws ScriptException {
-
-        String code="function isIdNumber(idNum) {\n" +
+        //入参定义config   json
+        //返回值 message json
+        String code="function main(idNum) {\n" +
                 "  // 身份证号码正则表达式\n" +
                 "  var idNumPattern = /^[1-9]\\d{5}((19\\d{2})|(20[0-2]\\d))((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$/;\n" +
                 "   \n" +
@@ -61,20 +62,26 @@ public class JsApp {
                 "  }\n" +
                 "  var checkCode = [\"1\", \"0\", \"X\", \"9\", \"8\", \"7\", \"6\", \"5\", \"4\", \"3\", \"2\"][weightedSum % 11];\n" +
                 "  return checkCode === idNum.charAt(17).toUpperCase();\n" +
-                "}\n" +
+                "}\n" ;
+
+                String codemain=
                 "// 获取字段名\n" +
                 "var col_name=ds_col_name;\n" +
                 "var col_var=dsContext.getValueFromColumn(col_name)\n" +
-                "isIdNumber(col_var);";
+                "main(col_var);";
         System.setProperty("polyglot.js.nashorn-compat","true");
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("graal.js");
         engine.put("ds_col_name","aa");
         engine.put("dsContext", new DsContext());
-        Object result = engine.eval(code);
+        Object result = engine.eval(code+codemain);
         System.out.println(result); // Output: 5
 
     }
 
+    //上下文列表
+    //1.字段名称
+    //2.根据字段名获取字段值
+    //3.
 
     public static class DsContext {
         public Object getValueFromColumn(String aa) {

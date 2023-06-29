@@ -3,9 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.chail</groupId>
-        <artifactId>chail-java</artifactId>
+        <artifactId>java-demo</artifactId>
         <version>master</version>
-        <relativePath>../../../pom.xml</relativePath>
     </parent>
     <artifactId>graaljs</artifactId>
     <properties>
@@ -39,6 +38,11 @@
             <groupId>org.graalvm.tools</groupId>
             <artifactId>chromeinspector</artifactId>
             <version>${graalvm.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
         </dependency>
     </dependencies>
 
