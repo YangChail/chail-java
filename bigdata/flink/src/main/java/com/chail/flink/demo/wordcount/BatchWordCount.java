@@ -1,4 +1,4 @@
-package com.chail.flink.wordcount;
+package com.chail.flink.demo.wordcount;
 
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.api.java.ExecutionEnvironment;

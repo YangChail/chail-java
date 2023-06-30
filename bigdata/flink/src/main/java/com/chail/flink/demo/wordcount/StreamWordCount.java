@@ -1,4 +1,4 @@
-package com.chail.flink.wordcount;
+package com.chail.flink.demo.wordcount;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.typeinfo.Types;
@@ -51,8 +51,10 @@ public class StreamWordCount {
         //聚合
         SingleOutputStreamOperator<Tuple2<String, Long>> sum = keyedStream.sum(1);
 
+        //打印
         sum.print();
 
+        //启动执行
         env.execute();
 
     }
