@@ -1,8 +1,14 @@
 package com.chail.flink.api.source;
 
 import com.chail.flink.model.Event;
+import com.mchz.flink.connector.jdbc.JdbcConnectionOptions;
+import com.mchz.flink.connector.jdbc.internal.connection.SimpleJdbcConnectionProvider;
+import com.mchz.flink.connector.jdbc.table.JdbcDynamicTableSource;
+import com.mchz.mcdatasource.core.DataBaseType;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+
+import java.sql.Connection;
 
 /**
  * @author : yangc
@@ -14,8 +20,13 @@ public class SourceDemo {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
-        DataStreamSource<Event> dataStreamSource = env.addSource(new ClinkSource());
-        dataStreamSource.print();
+
+
+//        Connection connection = new SimpleJdbcConnectionProvider(options).getOrEstablishConnection();
+//        System.out.println(connection);
+
+
+
         env.execute();
 
 

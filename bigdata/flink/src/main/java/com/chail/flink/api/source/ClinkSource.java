@@ -23,7 +23,7 @@ public class ClinkSource implements SourceFunction<Event> {
         String[] user = {"Mary", "Alice", "Bob", "Cary"};
         String[] urls = {"./home", "./cart", "./fav", "./prod?id=100", "./prod?id=10"};
         int i=0;
-        while (run&&i<10){
+        while (run&&i<100){
             ctx.collect(new Event(user[random.nextInt(user.length)],urls[random.nextInt(urls.length)],System.currentTimeMillis(),random.nextInt(100)));
             Thread.sleep(1000);
             i++;
