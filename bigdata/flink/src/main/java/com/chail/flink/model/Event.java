@@ -22,6 +22,8 @@ public class Event {
     }
 
 
+
+
     public Event(String user, String url, Long time,Integer age) {
         this.user = user;
         this.url = url;

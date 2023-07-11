@@ -8,6 +8,7 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.*;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
+import org.apache.flink.types.Row;
 
 import java.io.File;
 import java.time.Duration;
@@ -20,21 +21,33 @@ import java.time.Duration;
  */
 public class CommonTableTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //创建环境
         EnvironmentSettings settings = EnvironmentSettings
                 .newInstance()
                 .inStreamingMode()   // 使用流处理模式
                 .build();
-        TableEnvironment tableEnv = TableEnvironment.create(settings);
+        StreamTableEnvironment tableEnv = StreamTableEnvironment.create(StreamExecutionEnvironment.getExecutionEnvironment(),settings);
         //simple(tableEnv);
-        count(tableEnv);
+        //count(tableEnv);
+        transStream(tableEnv);
 
     }
 
 
-
-    private static void transStream(TableEnvironment tableEnv){
+    /**
+     * 6> +I[Mary, 1]
+     * 10> +I[Bob, 1]
+     * 12> +I[Alice, 1]
+     * 6> -U[Mary, 1]
+     * 10> -U[Bob, 1]
+     * 6> +U[Mary, 2]
+     * 10> +U[Bob, 2]
+     *
+     * @param tableEnv
+     * @throws Exception
+     */
+    private static void transStream(StreamTableEnvironment tableEnv) throws Exception {
         //创建输入表
         String inSqlDdl = String.format("create table input_t (username STRING,url STRING,tt BIGINT) WITH('connector' = 'filesystem','path'='%s','format'='csv')", System.getProperty("user.dir")+ File.separator+"bigdata"+File.separator+"flink"+File.separator+"clink.txt");
         tableEnv.executeSql(inSqlDdl);
@@ -43,7 +56,9 @@ public class CommonTableTest {
         tableEnv.executeSql(outSqlDdl);
         //转换临时表
         Table sqlQuery = tableEnv.sqlQuery("select username,count(username)as tt from input_t group by username");
-
+        DataStream<Row> changelogStream = tableEnv.toChangelogStream(sqlQuery);
+        changelogStream.print();
+        changelogStream.executeAndCollect();
     }
 
 

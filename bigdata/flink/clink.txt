@@ -7,3 +7,6 @@ Mary,./home,6006
 Bob,·/cart,6006
 Bob,./home,8000
 Bob,./prod?id,10900
+Bob,./prod?id,13900
+Mary,./home,16006
+Alice,./cart,22000
