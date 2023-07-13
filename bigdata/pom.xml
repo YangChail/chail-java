@@ -16,6 +16,7 @@
     <modules>
         <module>flink</module>
         <module>flink-cdc</module>
+        <module>kafka</module>
     </modules>
 
     <properties>

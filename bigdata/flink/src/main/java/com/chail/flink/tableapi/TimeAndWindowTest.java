@@ -44,9 +44,7 @@ public class TimeAndWindowTest {
         //滚动窗口聚合
 
         tableEnv.toDataStream(tableEnv.sqlQuery("select count(username),username,window_end AS endT " +
-                "FROM TABLE(" +
-                " TUMBLE(TABLE input_t ,DESCRIPTOR(et),INTERVAL '10' SECOND)" +
-                ")" +
+                "FROM TABLE( TUMBLE(TABLE input_t ,DESCRIPTOR(et),INTERVAL '10' SECOND))" +
                 "GROUP BY username,window_end,window_start"))
 
                 //.print("==TUMBLE=WINDOW==")
