@@ -1,7 +1,4 @@
-package chirld;
-
-import lombok.Getter;
-import lombok.Setter;
+package child;
 
 public class Dog {
 

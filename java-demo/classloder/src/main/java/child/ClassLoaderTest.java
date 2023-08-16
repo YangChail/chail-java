@@ -1,13 +1,10 @@
-package chirld;
+package child;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Field;
 
 public class ClassLoaderTest {
     static class MyClassLoader extends ClassLoader {
@@ -43,7 +40,7 @@ public class ClassLoaderTest {
         clazz1.getDeclaredField("name").set(dog1, "张三");
 
 
-        Class clazz2 = Class.forName("chirld.Dog");
+        Class clazz2 = Class.forName("child.Dog");
         Object dog2 = clazz2.newInstance();
         clazz2.getDeclaredField("name").set(dog1, "李四");
 

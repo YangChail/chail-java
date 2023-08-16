@@ -1,4 +1,4 @@
-package chirld;
+package child;
 
 import java.io.IOException;
 import java.net.URL;
