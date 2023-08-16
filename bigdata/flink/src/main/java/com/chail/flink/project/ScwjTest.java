@@ -26,13 +26,12 @@ public class ScwjTest {
                 .inStreamingMode()   // 使用流处理模式
                 .build();
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(1);
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env,settings);
 
         // 获取表环境的配置
         TableConfig tableConfig = tableEnv.getConfig();
         // 配置状态保持时间
-        tableConfig.setIdleStateRetention(Duration.ofMinutes(10));
+        tableConfig.setIdleStateRetention(Duration.ofMinutes(1));
 
 
         TableResult tableResult = tableEnv.executeSql(sourceTable1);
@@ -79,7 +78,7 @@ public class ScwjTest {
 //                ;
 
        tableEnv.toDataStream(tableEnv.sqlQuery(querySql)).print();
-        env.execute();
+       env.execute();
     }
 
     private static final String sourceTable1=" create table MS_GHMX(XJJE String," +
