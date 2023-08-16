@@ -10,7 +10,6 @@
 package com.mchz.template.license;
 
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -73,7 +72,7 @@ public class MD5Util {
 		try {
 			String s=br.readLine();
 			System.out.println("MD5： "+md5(s));
-			System.out.println("MD51："+ DigestUtils.md5Hex(s).toUpperCase());
+			//System.out.println("MD51："+ DigestUtils.md5Hex(s).toUpperCase());
 		} catch (IOException e) {
 			LOGGER.error("加密出错", e);
 		}

@@ -3,7 +3,6 @@ package com.mchz.template.license;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.Date;
 
@@ -51,7 +50,8 @@ public class License {
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+       // return ToStringBuilder.reflectionToString(this);
+        return "";
     }
 
 }
