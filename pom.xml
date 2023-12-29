@@ -11,7 +11,7 @@
     <modules>
         <module>java-demo</module>
         <module>bigdata</module>
-        <module>db/oracle-test</module>
+        <module>db</module>
         <!--        <module>bigdata/kafka-kb</module>-->
 <!--        <module>bigdata/hdfs-kerberos</module>-->
 <!--        <module>bigdata/minio</module>-->

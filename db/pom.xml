@@ -15,6 +15,7 @@
 
     <modules>
         <module>jdbc</module>
+        <module>kvrocks</module>
     </modules>
 
     <properties>

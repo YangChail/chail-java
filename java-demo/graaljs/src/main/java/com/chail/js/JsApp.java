@@ -1,6 +1,5 @@
 package com.chail.js;
 
-import com.oracle.truffle.js.scriptengine.GraalJSScriptEngine;
 import org.graalvm.polyglot.Context;
 import org.graalvm.polyglot.Value;
 
