@@ -30,7 +30,7 @@ public class StreamWordCount {
             lineDataSteamSource = env.readTextFile(path);
         }else{
             ParameterTool parameterTool = ParameterTool.fromArgs(args);
-            String host = parameterTool.get("host", "192.168.239.3");
+            String host = parameterTool.get("host", "192.168.51.194");
             int port = parameterTool.getInt("port", 7777);
             lineDataSteamSource = env.socketTextStream(host,port);
         }
