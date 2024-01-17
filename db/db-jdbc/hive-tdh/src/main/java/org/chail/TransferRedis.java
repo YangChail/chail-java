@@ -5,10 +5,14 @@ import org.chail.jedis.NameSpaceCmd;
 import org.chail.model.JobTask;
 import org.chail.util.JDBCUtil;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.params.ScanParams;
+import redis.clients.jedis.resps.ScanResult;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Slf4j
 public class TransferRedis {
@@ -23,7 +27,117 @@ public class TransferRedis {
 
     private static final ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
 
+
+    private static final String[] tables = {
+            "13_HISDB.dbo_Admission",
+            "13_HISDB.dbo_AdmissionExtInfo",
+            "13_HISDB.dbo_AdmitPre",
+            "13_HISDB.dbo_AllergyReg",
+            "13_HISDB.dbo_BASY_AllergyRecord",
+            "13_HISDB.dbo_BASY_BloodRecord",
+            "13_HISDB.dbo_BASY_DiagMatch",
+            "13_HISDB.dbo_BASY_DischargeDiag",
+            "13_HISDB.dbo_BASY_EmployeeSign",
+            "13_HISDB.dbo_BASY_PatInfoMain",
+            "13_HISDB.dbo_BASY_ReportDischargeDiag",
+            "13_HISDB.dbo_BASY_ReportMain",
+            "13_HISDB.dbo_BASY_ReportSurgeryRecord",
+            "13_HISDB.dbo_BASY_SSDMK",
+            "13_HISDB.dbo_BASY_SurgeryRecord",
+            "13_HISDB.dbo_BASY_ZDDMK",
+            "13_HISDB.dbo_BASY_ZYMainRecord",
+            "13_HISDB.dbo_BasicData",
+            "13_HISDB.dbo_BloodApply",
+            "13_HISDB.dbo_BloodApplyDetail",
+            "13_HISDB.dbo_BloodMatingTest",
+            "13_HISDB.dbo_BloodReceivePut",
+            "13_HISDB.dbo_BloodTest",
+            "13_HISDB.dbo_BloodTransfusionBook",
+            "13_HISDB.dbo_BloodTransfusionDetail",
+            "13_HISDB.dbo_BloodWasteBook",
+            "13_HISDB.dbo_Charge",
+            "13_HISDB.dbo_DailyCheckTemp",
+            "13_HISDB.dbo_DrugApplyMZ",
+            "13_HISDB.dbo_DrugBasic",
+            "13_HISDB.dbo_DrugCheckCode",
+            "13_HISDB.dbo_DrugDeptApply",
+            "13_HISDB.dbo_DrugInOutReport",
+            "13_HISDB.dbo_DrugOutMZ",
+            "13_HISDB.dbo_DrugOutZY",
+            "13_HISDB.dbo_DrugOut_SJK"
+    };
+
     public static void main(String[] args) throws Exception {
+        TransferRedis transferRedis=new TransferRedis();
+        transferRedis.redisToRedis();
+
+    }
+
+
+    private void redisToRedis(){
+        List<String> TableList = Arrays.asList(tables);
+        log.info("开始");
+        Jedis  jedisNew = new Jedis(LOCAL_IP, NameSpaceCmd.DEFAULT_PORT );
+        jedisNew.auth("mcadmin");
+        Jedis  jedisOld = new Jedis(LOCAL_IP, NameSpaceCmd.DEFAULT_PORT + 10000);
+        jedisOld.auth("mcadmin");
+        //拿到所有
+        NameSpaceCmd nameSpaceCmd=new NameSpaceCmd(jedisNew);
+        List<String> all = nameSpaceCmd.getAll();
+        List<String> collect = all.stream().distinct().collect(Collectors.toList());
+        log.info("-----开始转移：{}-----",collect.size());
+        int i=0;
+        for (String nameSpace : collect) {
+            if("__namespace".equals(nameSpace)||"mcadmin".equals(nameSpace)){
+                i++;
+                continue;
+            }
+            if(TableList.contains(nameSpace)){
+                log.info("-----开始转移：{}已经转移过了-----",nameSpace);
+                i++;
+                continue;
+            }
+            log.info("-----开始转移：{}-剩余{}----",nameSpace,collect.size()-i);
+            try{
+                jedisNew.auth(nameSpace);
+                jedisOld.auth(nameSpace);
+                ScanParams params = new ScanParams().count(1000);
+                String cursorKey="nameSpace_transfer_redis";
+                String cursor = "0";
+                String cursorKeyValue = jedisOld.get(cursorKey);
+                if(cursorKeyValue!=null&& !cursorKeyValue.isEmpty()){
+                    cursor = cursorKeyValue;
+                }
+                long num=0;
+                do {
+                    ScanResult<String> result = jedisOld.scan(cursor, params);
+                    List<String> keys = result.getResult();
+                    for (String key : keys) {
+                        String value = jedisOld.get(key);
+                        jedisNew.setnx(key,value);
+                        num++;
+                    }
+                    if(num%10000==0){
+                        log.info("-----开始转移：{}--{}条---",nameSpace,num);
+                    }
+                    cursor = result.getCursor();
+                    if(!cursor.equals("0")){
+                        jedisOld.set(cursorKey,cursor);
+                    }
+                } while (!cursor.equals("0"));
+                log.info("-----开始转移：{}--{}条---",nameSpace,num);
+            }catch (Throwable e){
+                log.error("-----开始转移：{}--error---",nameSpace,e);
+            }
+
+
+        }
+
+    }
+
+
+
+    private void dbToRedis() throws InterruptedException {
         while (true) {
             TransferRedis transferRedis = new TransferRedis();
             List<JobTask> jobTaskAll = transferRedis.getData();
@@ -45,8 +159,6 @@ public class TransferRedis {
             Thread.sleep(1000);
         }
     }
-
-
 
 
 
@@ -84,8 +196,8 @@ public class TransferRedis {
                             .targetTableName(targetTableName)
                             .jobHistoryId(hisId)
                             .build();
-                    jobTasks.add(build);
-                }
+                   jobTasks.add(build);
+               }
             }
         } catch (Exception e) {
            log.error("{}",e);
