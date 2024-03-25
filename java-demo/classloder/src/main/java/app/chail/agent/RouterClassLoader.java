@@ -1,6 +1,5 @@
 package app.chail.agent;
 
-import sun.misc.VM;
 
 import java.net.URL;
 import java.net.URLClassLoader;

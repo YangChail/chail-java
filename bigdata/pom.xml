@@ -14,11 +14,12 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>flink</module>
-        <module>flink-cdc</module>
-        <module>kafka</module>
-        <module>hbase</module>
+<!--        <module>flink</module>-->
+<!--        <module>flink-cdc</module>-->
+<!--        <module>kafka</module>-->
+<!--        <module>hbase</module>-->
         <module>hdfs-kerberos</module>
+        <module>hudi-clinet/hudi-java</module>
     </modules>
 
     <properties>

@@ -16,7 +16,7 @@
     <modules>
         <module>graaljs</module>
         <module>spring</module>
-        <module>classloder</module>
+<!--        <module>classloder</module>-->
     </modules>
 
     <properties>

@@ -14,9 +14,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>jdbc</module>
-        <module>kvrocks</module>
-        <module>db-jdbc/hive-tdh</module>
+<!--        <module>jdbc</module>-->
+<!--        <module>kvrocks</module>-->
+<!--        <module>db-jdbc/hive-tdh</module>-->
     </modules>
 
     <properties>

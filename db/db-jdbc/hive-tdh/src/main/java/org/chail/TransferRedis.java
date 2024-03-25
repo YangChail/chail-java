@@ -95,6 +95,8 @@ public class TransferRedis {
             if(TableList.contains(nameSpace)){
                 log.info("-----开始转移：{}已经转移过了-----",nameSpace);
                 i++;
+                jedisNew.auth(nameSpace);
+                jedisNew.set("transfer_finish","true");
                 continue;
             }
             log.info("-----开始转移：{}-剩余{}----",nameSpace,collect.size()-i);
@@ -114,6 +116,11 @@ public class TransferRedis {
                     List<String> keys = result.getResult();
                     for (String key : keys) {
                         String value = jedisOld.get(key);
+                        if(value.indexOf("-")>0){
+                            log.info("-----开始转移：{},数据有问题change-----",nameSpace);
+                            long time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse(value).getTime();
+                            jedisNew.set(key,time+"");
+                        }
                         jedisNew.setnx(key,value);
                         num++;
                     }
@@ -125,7 +132,9 @@ public class TransferRedis {
                         jedisOld.set(cursorKey,cursor);
                     }
                 } while (!cursor.equals("0"));
-                log.info("-----开始转移：{}--{}条---",nameSpace,num);
+                log.info("-----完成转移：{}--{}条---",nameSpace,num);
+                i++;
+                jedisNew.set("transfer_finish","true");
             }catch (Throwable e){
                 log.error("-----开始转移：{}--error---",nameSpace,e);
             }

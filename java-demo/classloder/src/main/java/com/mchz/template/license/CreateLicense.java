@@ -2,7 +2,7 @@
 
 package com.mchz.template.license;
 
-import com.sun.crypto.provider.SunJCE;
+
 
 import javax.crypto.*;
 import java.io.*;
@@ -17,7 +17,7 @@ public class CreateLicense {
     private boolean useIBMJCE = false;
 
     static {
-        Security.addProvider(new SunJCE());
+        //Security.addProvider(new SunJCE());
         ENCODE = 1;
     }
 
