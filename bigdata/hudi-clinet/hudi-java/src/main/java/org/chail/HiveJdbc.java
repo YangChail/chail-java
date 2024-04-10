@@ -191,7 +191,7 @@ public class HiveJdbc {
             for (HiveTableColumn column : columns) {
                 JSONObject field = new JSONObject();
                 field.put("name",column.getName());
-                field.put("type",column.getType());
+                field.put("type",new JSONArray().fluentAdd(column.getType()).fluentAdd("null"));
                 fields.add(field);
             }
             fields.add(new JSONObject().fluentPut("name","dt").fluentPut("type","string"));

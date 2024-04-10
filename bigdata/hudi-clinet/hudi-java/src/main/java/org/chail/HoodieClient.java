@@ -209,7 +209,7 @@ public class HoodieClient {
     }
 
 
-    public void ddl(String colName,Schema.Type type, String tableFormat) {
+    public void ddl(String colName,Schema.Type type, String tableFormat,String positiotion) {
         try {
             Configuration hadoopConf = new Configuration();
             hadoopConf.set("dfs.client.block.write.replace-datanode-on-failure.enable","true");
@@ -232,12 +232,27 @@ public class HoodieClient {
                     .forTable(tableName)
                     .build();
 
-            this.  client = new HoodieJavaWriteClient<>(new HoodieJavaEngineContext(hadoopConf), huDiWriteConf);
 
-            client.addColumn(colName, Schema.create(type),null, "", TableChange.ColumnPositionChange.ColumnPositionType.AFTER);
+
+
+
+            try {
+                this.  client = new HoodieJavaWriteClient<>(new HoodieJavaEngineContext(hadoopConf), huDiWriteConf);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+            try {
+                //client.addColumn(colName, Schema.create(type),null, "", TableChange.ColumnPositionChange.ColumnPositionType.NO_OPERATION);
+                // client.addColumn(colName, Schema.create(type),null, positiotion, TableChange.ColumnPositionChange.ColumnPositionType.AFTER);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
         }catch (Exception e){
             e.printStackTrace();
         }
+
     }
 
 

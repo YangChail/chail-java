@@ -101,17 +101,24 @@ public class HudiTest {
         table.getColumns().add( HiveJdbc.HiveTableColumn.builder().name("add_string").type(Schema.Type.STRING.getName()).build());
         String tableFormat = table.getTableFormat();
         Schema avroSchema = new Schema.Parser().parse(tableFormat);
-        int addString = avroSchema.getField("add_string").pos();
+        int pos = avroSchema.getField("add_string").pos();
 
-        hoodieClient.ddl("add_string", Schema.Type.STRING,tableFormat);
+        hoodieClient.ddl("add_string", Schema.Type.STRING,tableFormat,pos+"");
         List<JSONObject> list = new ArrayList<>();
-        String s = "20301221";
-        partitionPathSet.add(s);
+        String s = partitionPathSet.stream().findFirst().get();
+        //partitionPathSet.add(s);
         list.add(new JSONObject().fluentPut("id",111).fluentPut("username","user_AAA11").fluentPut("password", "abc_AAA1").fluentPut("add_string", "add_string1").fluentPut("age", new Random().nextInt(10)).fluentPut("dt", s));
         list.add(new JSONObject().fluentPut("id",222).fluentPut("username","user_AAA222").fluentPut("password", "abc_AAA2").fluentPut("add_string", "add_string2").fluentPut("age", new Random().nextInt(10)).fluentPut("dt", s));
         hoodieClient.upsert(list,true,tableFormat);
+
+         s ="43301226";
+        partitionPathSet.add(s);
 //
 //
+        list.add(new JSONObject().fluentPut("id",111).fluentPut("username","user_AAA11").fluentPut("password", "abc_AAA1").fluentPut("add_string", "add_string1").fluentPut("age", new Random().nextInt(10)).fluentPut("dt", s));
+        list.add(new JSONObject().fluentPut("id",222).fluentPut("username","user_AAA222").fluentPut("password", "abc_AAA2").fluentPut("add_string", "add_string2").fluentPut("age", new Random().nextInt(10)).fluentPut("dt", s));
+        hoodieClient.upsert(list,true,tableFormat);
+
         jdbc.ddl(table, "add_string",Schema.Type.STRING.name());
 
         jdbc.alterSpark(table);
