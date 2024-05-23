@@ -20,6 +20,8 @@
 <!--        <module>hbase</module>-->
         <module>hdfs-kerberos</module>
         <module>hudi-clinet/hudi-java</module>
+        <module>hive</module>
+        <module>seateun-engine</module>
     </modules>
 
     <properties>

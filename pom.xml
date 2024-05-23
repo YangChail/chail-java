@@ -12,6 +12,7 @@
         <module>java-demo</module>
         <module>bigdata</module>
         <module>db</module>
+        <module>java-demo/hazalcast</module>
         <!--        <module>bigdata/kafka-kb</module>-->
 <!--        <module>bigdata/hdfs-kerberos</module>-->
 <!--        <module>bigdata/minio</module>-->

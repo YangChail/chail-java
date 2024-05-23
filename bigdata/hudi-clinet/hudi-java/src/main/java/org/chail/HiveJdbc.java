@@ -238,4 +238,69 @@ public class HiveJdbc {
     }
 
 
+
+    public void create10Table(){
+        for (int i = 0; i < 20; i++){
+            String sql="CREATE TABLE `default.hudi_test${num}`(\n" +
+                    "  `_hoodie_commit_time` string, \n" +
+                    "  `_hoodie_commit_seqno` string, \n" +
+                    "  `_hoodie_record_key` string, \n" +
+                    "  `_hoodie_partition_path` string, \n" +
+                    "  `_hoodie_file_name` string, \n" +
+                    "  `id` int, \n" +
+                    "  `col1` string, \n" +
+                    "  `col2` double, \n" +
+                    "  `col3` string, \n" +
+                    "  `col4` string, \n" +
+                    "  `col5` string, \n" +
+                    "  `col6` string, \n" +
+                    "  `col7` string, \n" +
+                    "  `col8` bigint, \n" +
+                    "  `col9` string)\n" +
+                    "PARTITIONED BY ( \n" +
+                    "  `dt` string)\n" +
+                    "ROW FORMAT SERDE \n" +
+                    "  'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe' \n" +
+                    "WITH SERDEPROPERTIES ( \n" +
+                    "  'path'='hdfs://192.168.239.223:9000/user/hive/warehouse/default.db/hudi_test${num}') \n" +
+                    "STORED AS INPUTFORMAT \n" +
+                    "  'org.apache.hudi.hadoop.realtime.HoodieParquetRealtimeInputFormat' \n" +
+                    "OUTPUTFORMAT \n" +
+                    "  'org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat'\n" +
+                    "LOCATION\n" +
+                    "  'hdfs://192.168.239.223:9000/user/hive/warehouse/default.db/hudi_test${num}'\n" +
+                    "TBLPROPERTIES (\n" +
+                    "  'primaryKey'='id', \n" +
+                    "  'spark.sql.create.version'='3.4.2', \n" +
+                    "  'spark.sql.sources.provider'='hudi', \n" +
+                    "  'spark.sql.sources.schema.numPartCols'='1', \n" +
+                    "  'spark.sql.sources.schema.numParts'='1', \n" +
+                    "  'spark.sql.sources.schema.part.0'='{\"type\":\"struct\",\"fields\":[{\"name\":\"_hoodie_commit_time\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"_hoodie_commit_seqno\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"_hoodie_record_key\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"_hoodie_partition_path\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"_hoodie_file_name\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"id\",\"type\":\"integer\",\"nullable\":true,\"metadata\":{}},{\"name\":\"col1\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"col2\",\"type\":\"double\",\"nullable\":true,\"metadata\":{}},{\"name\":\"col3\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"col4\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"col5\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"col6\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"col7\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"col8\",\"type\":\"long\",\"nullable\":true,\"metadata\":{}},{\"name\":\"col9\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"dt\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}', \n" +
+                    "  'spark.sql.sources.schema.partCol.0'='dt', \n" +
+                    "  'transient_lastDdlTime'='1714102817', \n" +
+                    "  'type'='mor')";
+
+            Statement stmt = null;
+            try {
+                // Create a statement
+                stmt = conn.createStatement();
+                stmt.execute(String.format("drop table  IF EXISTS %s.%s","default","hudi_test"+i));
+                stmt.execute(sql.replace("${num}",String.valueOf(i)));
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (stmt != null) stmt.close();
+                } catch (SQLException se2) {
+                }
+            }
+        }
+
+
+
+
+
+    }
+
+
 }
